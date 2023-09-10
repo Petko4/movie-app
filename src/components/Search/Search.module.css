@@ -1,0 +1,35 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  max-width: 15vw;
+  width: 15vw;
+}
+
+.search ul {
+  background: #000a;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+}
+
+.search li:not(:last-child) {
+  border-bottom: 1px solid #f3efefd8;
+}
+
+.search li {
+  padding-bottom: 0.5rem;
+}
+
+.search input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #f3efefd8;
+  border-radius: 2px;
+  color: #f0eaea;
+  font-size: 1rem;
+  height: 1.5rem;
+  outline: none;
+  text-align: center;
+}

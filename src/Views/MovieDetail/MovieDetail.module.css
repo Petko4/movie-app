@@ -1,0 +1,29 @@
+.movieDetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.description {
+  text-align: left;
+  max-width: 35vw;
+}
+
+.description h2 {
+  margin: 0rem;
+}
+
+.tagLine {
+  margin-top: 0rem;
+  font-style: italic;
+}
+
+.score {
+  text-align: right;
+  font-size: 3rem;
+}
+
+.movieDetail img {
+  border-radius: 18px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,12 @@
+.btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+
+.btn:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}

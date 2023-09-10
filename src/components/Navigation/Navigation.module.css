@@ -1,0 +1,22 @@
+.navigation {
+  height: 4rem;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search {
+  position: absolute;
+  right: 3rem;
+}
+
+.navigation > ul > li > a {
+  font-size: 1.5rem;
+}
+
+.isActive {
+  color: #ffdc13;
+}
