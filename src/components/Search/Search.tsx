@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import style from "./Search.module.css";
 import { API_KEY, BASE_API_URL } from "../../lib/constants";
 import { movieMapper } from "../../lib/mappers";
-import { MovieOriginalData } from "../../lib/types";
+import { MovieOriginalData, MoviesOriginalData } from "../../lib/types";
 
 function Search() {
   const [value, setValue] = useState("");
@@ -15,7 +15,7 @@ function Search() {
   const [showData, setShowData] = useState(true);
   const isFirstRender = useRef(true);
 
-  const { data } = useFetch(url);
+  const { data } = useFetch<MoviesOriginalData>(url);
 
   // 1 sec after stop typing update url and this will trigger data fetch
   useEffect(() => {

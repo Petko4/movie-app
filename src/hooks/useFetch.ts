@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-export function useFetch(url: string) {
+export function useFetch<T>(url: string) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<T | null>(null);
 
   useEffect(() => {
     const abortController = new AbortController();

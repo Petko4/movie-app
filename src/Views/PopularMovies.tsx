@@ -4,15 +4,15 @@ import { MOVIES_BY_POPULARITY_URL } from "../lib/constants";
 import MovieList from "../components/MovieList/MovieList";
 import { movieMapper } from "../lib/mappers";
 import MoreButton from "../components/MoreButton/MoreButton";
-import { Movie } from "../lib/types";
+import { Movie, MovieStorageContext, MoviesOriginalData } from "../lib/types";
 import { LocalStorageContext } from "../App";
 
 function PopularMovies() {
-  const { addMovie } = useContext(LocalStorageContext);
+  const { addMovie } = useContext(LocalStorageContext) as MovieStorageContext;
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState<Array<Movie>>([]);
 
-  const { data, isLoading, error } = useFetch(
+  const { data, isLoading, error } = useFetch<MoviesOriginalData>(
     `${MOVIES_BY_POPULARITY_URL}&page=${page}`
   );
 

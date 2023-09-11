@@ -26,3 +26,14 @@ export type MovieOriginalData = {
     }
   ];
 };
+
+export type MoviesOriginalData = {
+  page: string;
+  results: Array<MovieOriginalData>;
+};
+
+export type MovieStorageContext = {
+  movies: Array<Movie>;
+  addMovie: (movie: Movie) => void;
+  removeMovie: (movie: Movie) => void;
+};

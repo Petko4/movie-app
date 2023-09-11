@@ -6,13 +6,13 @@ import { movieMapper } from "../../lib/mappers";
 import style from "./MovieDetail.module.css";
 import { useContext } from "react";
 import { LocalStorageContext } from "../../App";
-import { Movie } from "../../lib/types";
+import { Movie, MovieOriginalData, MovieStorageContext } from "../../lib/types";
 import LinkButton from "../../components/LinkButton/LinkButton";
 
 function MovieDetail() {
-  const { addMovie } = useContext(LocalStorageContext);
+  const { addMovie } = useContext(LocalStorageContext) as MovieStorageContext;
   const { id } = useParams();
-  const { data, isLoading, error } = useFetch(
+  const { data, isLoading, error } = useFetch<MovieOriginalData>(
     `${BASE_API_URL}/movie/${id}?${API_KEY}`
   );
 
@@ -58,7 +58,7 @@ function MovieDetail() {
               }}
             >
               <LinkButton
-                onClick={() => addMovie(movie)}
+                onClick={() => addMovie(movie as Movie)}
                 name="Add movie into watchlist"
               />
               <div className={style.score}>

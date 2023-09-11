@@ -6,10 +6,12 @@ import MovieDetail from "./Views/MovieDetail/MovieDetail";
 import Navigation from "./components/Navigation/Navigation";
 import WatchList from "./Views/WatchList/WatchList";
 import { createContext } from "react";
-import { Movie } from "./lib/types";
+import { Movie, MovieStorageContext } from "./lib/types";
 import useLocalStorage from "./hooks/useLocalStorage";
 
-export const LocalStorageContext = createContext(null);
+export const LocalStorageContext = createContext<MovieStorageContext | null>(
+  null
+);
 
 function App() {
   const [movies, setMovies] = useLocalStorage<Array<Movie>>("movie_app", []);
