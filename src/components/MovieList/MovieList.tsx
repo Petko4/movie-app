@@ -21,6 +21,7 @@ function MovieList({ moviesData, onAction, actionName }: MovieListProps) {
           description={movie.description}
           onAction={onAction}
           actionName={actionName}
+          releaseYear={movie.releaseYear}
         />
       ))}
     </div>

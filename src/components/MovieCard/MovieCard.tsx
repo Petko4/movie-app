@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "./MovieCard.module.css";
 import Score from "../Score/Score";
-import { useContext } from "react";
-import { LocalStorageContext } from "../../App";
 import LinkButton from "../LinkButton/LinkButton";
+import { Movie } from "../../lib/types";
 
 interface MovieCardProps {
   id: number;
@@ -11,6 +10,7 @@ interface MovieCardProps {
   image: string;
   description: string;
   score: number;
+  releaseYear: string;
   onAction: (movie: Movie) => void;
   actionName: string;
 }
@@ -21,11 +21,10 @@ function MovieCard({
   image,
   description,
   score,
+  releaseYear,
   onAction,
   actionName,
 }: MovieCardProps) {
-  const { addMovie } = useContext(LocalStorageContext);
-
   return (
     <div className={styles.card}>
       <div className={styles.poster}>
@@ -39,7 +38,14 @@ function MovieCard({
           <LinkButton
             name={actionName}
             onClick={() =>
-              onAction({ id, title, posterUrl: image, description, score })
+              onAction({
+                id,
+                title,
+                posterUrl: image,
+                description,
+                score,
+                releaseYear,
+              })
             }
           />
           <Score score={score} />

@@ -16,7 +16,7 @@ export function useFetch<T>(url: string) {
 
         const data = await res.json();
         setData(data);
-      } catch (e) {
+      } catch (e: any) {
         if (!abortController.signal.aborted) {
           setError(e.message);
         }
